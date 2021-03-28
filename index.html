@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity Planner</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="glassmorph">
+      <!-- Navbar -->
+      <nav>
+        <div class="navbar container flex">
+          <div class="logo flex">
+            <span><i <i class="fa fa-2x mx-1 fa-calendar"></i></span>
+            <span>Todo Tracker</span>
+          </div>
+          <div class="nav-links">
+            <a class="nav-link completed-link" href="#">✅ Completed</a>
+            <a class="nav-link incompleted-link" href="#"> ❓ Incompleted</a>
+            <a class="nav-link all-link" href="#">📃 All</a>
+            <a class="nav-link reset-link" href="#"> ❌ Reset</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main app -->
+      <main class="app grid">
+        <div class="todo-input-container flex">
+          <form class="input-data">
+            <div class="form-data grid">
+              <label for="name"> Title </label>
+              <input
+                type="text"
+                name="name"
+                id="title"
+                maxlength="16"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-data grid">
+              <label for="name">Task </label>
+              <input type="text" name="name" id="task" autocomplete="off" />
+            </div>
+            <div class="form-data grid">
+              <label class="priority">Priority</label>
+              <div class="radio-btns grid">
+                <div class="grid-2">
+                  <label for="Urgent">Urgent</label>
+                  <input
+                    type="radio"
+                    id="Urgent"
+                    class="radio-btn"
+                    name="priority"
+                    value="urgent"
+                  />
+                </div>
+                <div class="grid-2">
+                  <label for="Important">Important</label>
+                  <input
+                    type="radio"
+                    id="Important"
+                    class="radio-btn"
+                    name="priority"
+                    value="important"
+                  />
+                </div>
+                <div class="grid-2">
+                  <label for="Common">Common</label>
+                  <input
+                    type="radio"
+                    id="Common"
+                    class="radio-btn"
+                    name="priority"
+                    value="common"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="submit-form flex">
+              <button class="submit-todo">Add Todo</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Input todo list -->
+        <div class="todo-list-container">
+          <div class="todo flex time-container">
+            <h1 class="time">Apna Time Aayega!</h1>
+          </div>
+          <div class="todos">
+            <!-- <div class="todo todo-urgent">
+              <div class="action-todo flex">
+                <h2>Heading</h2>
+                <div class="action-todo-btns">
+                  <span><i class="fa fa-2x fa-check-circle"></i></span>
+                  <span><i class="fa fa-2x fa-trash"></i></span>
+                </div>
+              </div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia,
+                repudiandae!
+              </p>
+            </div>
+            <div class="todo todo-important">
+              <div class="action-todo flex">
+                <h2>Heading</h2>
+                <div class="action-todo-btns">
+                  <span
+                    ><i class="fa fa-2x fa-check-circle action-btn check"></i
+                  ></span>
+                  <span
+                    ><i class="fa fa-2x fa-trash action-btn trash"></i
+                  ></span>
+                </div>
+              </div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia,
+                repudiandae!
+              </p>
+            </div>
+            <div class="todo todo-common">
+              <div class="action-todo flex">
+                <h2>Heading</h2>
+                <div class="action-todo-btns">
+                  <span><i class="fa fa-2x fa-check-circle"></i></span>
+                  <span><i class="fa fa-2x fa-trash"></i></span>
+                </div>
+              </div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia,
+                repudiandae!
+              </p>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- Progress Report -->
+        <div class="progress-container">
+          <div class="progress">
+            <div class="progress-bar flex">Track</div>
+          </div>
+          <button class="progress-btn">Track Progress</button>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

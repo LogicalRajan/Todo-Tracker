@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  background-color: #fde1d0;
+  background-image: linear-gradient(to right, #f0d7c8 0%, #f6ebc6 100%);
+}
+
+:root {
+  --primary-color: #ffc93c;
+  --primary-text-color: #52575d;
+}
+/* utilites classes Start */
+
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-rows: 2fr 1fr;
+  grid-gap: 15px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+/* Utilities classes end */
+
+/* Navbar Styling Start*/
+
+nav {
+  height: 12vh;
+  width: 93%;
+  margin: 1rem auto;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 90px;
+  backdrop-filter: blur(5px);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  margin: 0.5rem 1rem;
+}
+
+.navbar {
+  width: inherit;
+  justify-content: space-between;
+}
+
+.logo span i {
+  color: #f48b29;
+  margin: 0 1rem;
+  height: 10px;
+}
+
+/* Navbar Styling End*/
+
+/* App Styling start */
+
+.app {
+  width: 90%;
+  height: 70vh;
+  margin: 1rem auto;
+}
+
+.todo-input-container,
+.todo-list-container,
+.progress-container {
+  padding: 3rem;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  border-top: 8px solid var(--primary-color);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+/* TodoInput Container styling  Start*/
+.input-data {
+  width: 90%;
+}
+.form-data {
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 2rem;
+}
+
+.form-data > label {
+  color: var(--primary-text-color);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.form-data input {
+  border: none;
+  width: 100%;
+  height: 2.5rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+
+.radio-btns {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+  font-size: 1.2rem;
+}
+input[type='radio'] {
+  border: 0px;
+  width: 100%;
+  height: 1.3em;
+}
+
+.submit-todo {
+  background-image: linear-gradient(
+    to right,
+    #ff8008 0%,
+    #ffc837 51%,
+    #ff8008 100%
+  );
+}
+.submit-todo {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 1.3rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 30px;
+  display: block;
+}
+
+button:focus {
+  outline: none;
+}
+
+.submit-todo:hover {
+  background-position: right center;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+/* TodoInput Container styling  End*/
+
+/* TodoList container styling start */
+
+.todo-list-container {
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
+.todo {
+  font-size: 0.8rem;
+  min-width: inherit;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 6px 6px 5px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  transition: all 1s ease;
+}
+
+.action-todo {
+  justify-content: space-between;
+}
+
+.time-container {
+  font-size: 0.6rem;
+  color: #444;
+  background: #eee;
+  border-radius: 30rem;
+  box-shadow: 12px 12px 15px 0 rgba(0, 0, 0, 0.1),
+    -12px -12px 15px 0 rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(9px);
+  margin-bottom: 2rem;
+}
+
+/* Scrollbar Styling start*/
+
+.todo-list-container {
+  justify-content: flex-start;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.todo-list-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.todo-list-container::-webkit-scrollbar-track {
+  background: #eee;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.todo-list-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #f09819, #ff512f);
+
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Scrollbar Styling end */
+
+.action-todo-btns span i {
+  color: #444;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 0.3rem;
+}
+
+.todo-urgent {
+  border-left: 5px solid #e84545;
+}
+
+.todo-important {
+  border-left: 5px solid #387c6d;
+}
+
+.todo-common {
+  border-left: 5px solid #845ec2;
+}
+
+.isCompleted {
+  opacity: 0.4;
+}
+
+.isCompleted .complete {
+  color: green;
+  font-size: 2rem;
+}
+
+.trashed {
+  opacity: 0;
+  transform: translateX(400px);
+}
+
+.action-todo h2 {
+  max-width: 400px;
+  font-size: 1.5rem;
+  color: #ee7605;
+}
+
+/* TodoList container styling End */
+
+/* Progress Bar styling start */
+
+.progress-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.progress {
+  width: 30rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  border-radius: 30rem;
+  box-shadow: -10px -10px 15px 0 rgba(255, 255, 255, 0.4),
+    10px 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  width: 100px;
+  font-size: 1.5rem;
+  height: inherit;
+  border-radius: inherit;
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(to right, #f09819, #ff512f);
+  text-align: center;
+}
+
+.progress-btn {
+  padding: 0.8rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-text-color);
+  background: #ffb26b;
+  border: none;
+  border-radius: 30rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: -10px -10px 15px 0 rgba(255, 255, 255, 1),
+    10px 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.progress-btn:hover {
+  background: #fa9434;
+}
+/* Progress Bar styling End */
+
+/* app styling Ended */
+
+/* Responsive Start */
+
+@media (max-width: 1380px) {
+  body {
+    font-size: 1rem;
+  }
+
+  nav {
+    margin: 0.5rem auto;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .todo-input-container,
+  .todo-list-container,
+  .progress-container {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .todo-input-container,
+  .progress-container {
+    width: auto;
+  }
+
+  .form-data > label {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .todo {
+    font-size: 0.7rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .time-container {
+    font-size: 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .action-todo h2 {
+    max-width: 400px;
+    font-size: 1rem;
+    color: #ee7605;
+  }
+
+  .isCompleted .complete {
+    font-size: 1.7rem;
+  }
+
+  .action-todo-btns span i {
+    color: #444;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 0.3rem;
+  }
+
+  .progress-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 1060px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: transparent;
+    background-image: linear-gradient(to left #f0d7c8);
+  }
+  .app {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    width: 90%;
+  }
+
+  .todo-list-container {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    min-height: 600px;
+  }
+
+  nav {
+    width: 90%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .nav-links {
+    margin-top: 0.5rem;
+  }
+
+  .todo {
+    font-size: 0.7rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .time-container {
+    font-size: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .progress-btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .progress-container {
+    flex-direction: column;
+  }
+  .progress-btn {
+    margin: 1.5rem auto 0 auto;
+  }
+}
+
+@media (max-width: 730px) {
+  body {
+    background-color: #fde1d0;
+  }
+  .app {
+    min-width: 90vw;
+  }
+  nav {
+    width: 98%;
+    height: 15vh;
+    font-size: 1rem;
+  }
+
+  nav a {
+    font-size: 0.65rem;
+    margin-right: 0.1rem;
+    margin-left: 0.1rem;
+  }
+
+  .todo-list-container,
+  .todo-input-container,
+  .progress-container {
+    min-width: 100%;
+  }
+
+  .form-data > label {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  input[type='radio'] {
+    border: 0px;
+    width: 100%;
+    height: 0.4rem;
+  }
+
+  .radio-btns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    font-size: 0.6rem;
+  }
+
+  .submit-todo {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .todo {
+    font-size: 0.5rem;
+    padding: 0.6rem 0.7rem;
+  }
+
+  .time-container {
+    font-size: 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .todo-list-container {
+    padding: 1rem 1rem;
+  }
+
+  .progress {
+    width: 15rem;
+    height: 3rem;
+  }
+}
