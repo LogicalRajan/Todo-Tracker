@@ -103,7 +103,6 @@ const todoTask = function (e) {
     };
     todoList.push(todoTaskObj);
     setLocalTodos(todoList);
-    console.log(todoTaskObj.id);
     inputHTML(todoTaskObj);
     //   clear input fields
     clearInput();
@@ -120,7 +119,6 @@ const action = function (e) {
   const findTodo = todoList.find(todo => todo.id === +parentId);
 
   if (actionBtn.classList.contains('trash')) {
-    console.log('trashed');
     parentTodo.classList.toggle('trashed');
     const indexOfTrashTodo = todoList.indexOf(findTodo);
     todoList.splice(indexOfTrashTodo, 1);
@@ -199,7 +197,5 @@ todos.addEventListener('click', action);
 navLinks.addEventListener('click', filter);
 
 progressBtn.addEventListener('click', progress);
-
-console.log(todoList);
 
 // Responsiveness

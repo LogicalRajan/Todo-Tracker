@@ -518,7 +518,7 @@ button:focus {
   input[type='radio'] {
     border: 0px;
     width: 100%;
-    height: 0.4rem;
+    height: 0.6rem;
   }
 
   .radio-btns {
